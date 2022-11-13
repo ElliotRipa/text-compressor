@@ -1,4 +1,0 @@
-This is a test file.
-It can handle break lines.
-
-Even multiple ones.
