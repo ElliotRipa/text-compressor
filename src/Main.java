@@ -1,3 +1,5 @@
+import javafx.util.Pair;
+
 import java.util.ArrayList;
 import java.util.Hashtable;
 
@@ -6,7 +8,7 @@ public class Main {
 
         Hashtable<String, Integer> dict = new Hashtable<>();            //Creates a prevalence dictionary.
 
-         ArrayList<String> file = FileReader.getFile("C:\\Users\\ellio\\IdeaProjects\\text-compressor\\src\\filename.txt");     //Reads a given file.
+         ArrayList<String> file = FileReader.getFile("C:\\Users\\ellio\\IdeaProjects\\text-compressor\\src\\testfile.txt");     //Reads a given file.
 
         assert file != null;
 
@@ -15,9 +17,9 @@ public class Main {
          }
 
         Tupler tplr = new Tupler();
-        tplr.getSorted(dict);
+        ArrayList<Pair<String, Integer>> list = tplr.getSorted(dict);
 
-        System.out.println("Haiii omg haiiii :3 uwuuw");
+        System.out.println("Haiii omg haiiii :3 uwuuw");                //Just so that I can set a breakpoint. I'm sorry.
 
     }
 

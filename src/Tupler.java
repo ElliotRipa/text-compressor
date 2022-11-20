@@ -7,10 +7,12 @@ import java.util.Set;
 
 public class Tupler {
 
-    public void getSorted(Hashtable<String, Integer> dict) {
+    public ArrayList<Pair<String, Integer>> getSorted(Hashtable<String, Integer> dict) {
         ArrayList<Pair<String, Integer>> array = makeDictTuple(dict);
 
         quickSort(array, 0, array.size());
+
+        return array;
 
     }
 
@@ -56,10 +58,10 @@ public class Tupler {
         try {
             while (lo <= hi) {      //TODO: Not get stuck in infinite loop.
 
-                if ((comparator.compare(array.get(lo).getValue(), pivot.getValue())) == -1) {
+                if ((comparator.compare(array.get(lo).getValue(), pivot.getValue())) != -1) {
                     lo++;
 
-                } else if ((comparator.compare(array.get(hi).getValue(), pivot.getValue())) == 1) {
+                } else if ((comparator.compare(array.get(hi).getValue(), pivot.getValue())) == -1) {
                     hi--;
 
                 } else {
