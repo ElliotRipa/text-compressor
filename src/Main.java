@@ -19,6 +19,14 @@ public class Main {
         Tupler tplr = new Tupler();
         ArrayList<Pair<String, Integer>> list = tplr.getSorted(dict);
 
+        CharList al = new CharList();
+
+        al.bitWiseOr((char) 2);
+
+        al.bitWiseOr('?');
+
+        System.out.println(al.size());
+
         System.out.println("Haiii omg haiiii :3 uwuuw");                //Just so that I can set a breakpoint. I'm sorry.
 
     }
