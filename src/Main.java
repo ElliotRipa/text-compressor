@@ -1,12 +1,16 @@
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
 
         Hashtable<String, Integer> dict = new Hashtable<>();            //Creates a prevalence dictionary.
 
-         ArrayList<String> file = FileReader.getFile("C:\\Users\\ellio\\IdeaProjects\\text-compressor\\src\\testfile.txt");     //Reads a given file.
+        System.out.println("What's the filepath? ");
+        Scanner scanner = new Scanner(System.in);
+        String filepath = scanner.nextLine();
+        ArrayList<String> file = FileReader.getFile(filepath);     //Reads a given file.
 
         assert file != null;
 
