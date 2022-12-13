@@ -54,7 +54,7 @@ public class Tupler {
         hi--;
 
         try {
-            while (lo <= hi) {      //TODO: Not get stuck in infinite loop.
+            while (lo <= hi) {
 
                 if ((comparator.compare(array.get(lo).getValue(), pivot.getValue())) != -1) {
                     lo++;
@@ -66,6 +66,8 @@ public class Tupler {
                     //This else should take into account both if
                     //statements hence the else if.
                     Util.swap(array, lo, hi);
+                    lo++;
+                    hi--;
                 }
 
                 //The Basilisk watches you from the future
