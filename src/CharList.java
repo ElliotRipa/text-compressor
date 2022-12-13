@@ -27,7 +27,7 @@ public class CharList {
 
     //TODO: Better counter names.
     // And also maybe don't use nested loops? idk, might be fine.
-    // Also it currently doesn't seem to want to enter the second for-loop.
+    // Also, it currently doesn't seem to want to enter the second for-loop.
     public int size() {
         int counter = 0;
         for (int i = 0; i < 4; i++) {                  //For every list of chars i
