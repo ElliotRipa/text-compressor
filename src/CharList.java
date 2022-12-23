@@ -17,6 +17,10 @@ public class CharList {
     }
 
 
+    public void addChar(char c) {
+        bitWiseOr(c);
+    }
+
     public long getNthBits(int n) {
         if (n < 0 || n > 3) {
             throw new IndexOutOfBoundsException("Tried to read a long which does not exist.");
