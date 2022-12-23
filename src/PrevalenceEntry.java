@@ -1,4 +1,4 @@
-public class PrevalenceEntry {
+public class PrevalenceEntry implements Comparable<PrevalenceEntry> {
 
     private String word;
     private Integer prevalence;
@@ -34,4 +34,9 @@ public class PrevalenceEntry {
         this.prevalence = prevalence;
     }
 
+
+    @Override
+    public int compareTo(PrevalenceEntry o) {
+        return this.prevalence.compareTo(o.prevalence);
+    }
 }
