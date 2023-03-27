@@ -31,12 +31,11 @@ public class CharList {
 
     //TODO: Better counter names.
     // And also maybe don't use nested loops? idk, might be fine.
-    // Also, it currently doesn't seem to want to enter the second for-loop.
     public int size() {
         int counter = 0;
-        for (int i = 0; i < 4; i++) {                  //For every list of chars i
-            for (int j = 0; j < longs[i]; j<<=1) {               //For every bit k
-                if ((longs[i]&j) == 1) {
+        for (int i = 0; i < 4; i++) {                                       //For every list of chars i
+            for (long bit = 1; bit != Long.MIN_VALUE; bit <<= 1) {               //For every bit
+                if ((longs[i] & bit) != 0) {
                     counter++;
                 }
             }
