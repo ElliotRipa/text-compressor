@@ -1,4 +1,3 @@
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
@@ -8,7 +7,12 @@ public class Main {
 
         System.out.println("What's the filepath? ");
         Scanner scanner = new Scanner(System.in);
-        String filepath = scanner.nextLine();
+        String filepath;
+        if(!scanner.nextLine().equals("")) {
+            filepath = scanner.nextLine();
+        } else {
+            filepath = "testfile.txt";                                 //I would put this in a separate directory but Java URLs are hell.
+        }
         ArrayList<String> wordList = FileReader.getFile(filepath);      //Reads a given file.
 
         assert wordList != null;
@@ -19,12 +23,22 @@ public class Main {
 
         CharList cl = getCharList(wordList);                            //Generates a CharList for the given wordList.
 
+        System.out.println(cl.size());
 
         Tupler tplr = new Tupler();
         ArrayList<Pair<String, Integer>> list = tplr.getSorted(dict);
 
 
         System.out.println("Haiii omg haiiii :3 uwuuw");                //Just so that I can set a breakpoint. I'm sorry.
+
+        PriorityQueue<PrevalenceEntry> prevalenceEntries = makePQ(dict);
+
+
+        ArrayList<PrevalenceEntry> pe = new ArrayList<>();
+
+       while(!prevalenceEntries.isEmpty()) {
+           pe.add((prevalenceEntries.remove()));
+       }
 
     }
 
@@ -53,7 +67,7 @@ public class Main {
 
     private static PriorityQueue<PrevalenceEntry> makePQ(Hashtable<String, Integer> prevMap) {
 
-        PriorityQueue<PrevalenceEntry> PQ = new PriorityQueue<>();
+        PriorityQueue<PrevalenceEntry> PQ = new PriorityQueue<>(Collections.reverseOrder());
 
         Set<String> keySet = prevMap.keySet();
 
